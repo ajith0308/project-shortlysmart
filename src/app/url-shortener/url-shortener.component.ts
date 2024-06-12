@@ -16,6 +16,7 @@ export class UrlShortenerComponent {
   url: string = '';
   shortenedUrl: string = '';
   qrImageUrl: any;
+loading: any;
   constructor(private http: HttpClient) {}
 
   onInputFocus(event: Event) {

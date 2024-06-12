@@ -16,6 +16,7 @@
       
       <div class="form-group">
         <button type="button" class="btn btn-primary shorten-btn" (click)="onShortenUrl()">Shorten URL</button>
+        <div *ngIf="loading" class="loader"><i class="fas fa-spinner fa-spin"></i></div> 
       </div>
     
     
