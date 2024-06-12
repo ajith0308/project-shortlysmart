@@ -6,36 +6,37 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-  }
-  
-  .url-shortener-container h2 {
+}
+
+.url-shortener-container h2 {
     margin-bottom: 20px;
-  }
-  
-  .form-group {
+}
+
+.form-group {
     margin-bottom: 15px;
-  }
-  
-  .form-control {
+}
+
+.form-control {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
-  }
-  
-  input.form-control {
-    height: 40px; /* Set the height for the input field */
-  }
-  
-  .btn {
-    width: 100%;
+}
+
+.shorten-btn {
+    width: 150px; /* Set the width to your desired value */
+    padding: 8px 20px; /* Adjust padding as needed */
+    border-radius: 5px; /* Set border radius */
+    margin: 0 auto; /* Center the button horizontally */
+}
+
+.btn {
     padding: 10px;
     background-color: #007bff;
     border: none;
     color: white;
     cursor: pointer;
-  }
-  
-  .btn:hover {
+}
+
+.btn:hover {
     background-color: #0056b3;
-  }
-  
+}
