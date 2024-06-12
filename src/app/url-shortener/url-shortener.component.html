@@ -1,0 +1,18 @@
+<div class="url-shortener-container">
+    <h2>URL Shortener</h2>
+    <form>
+      <div class="form-group">
+        <input 
+          type="text" 
+          id="url-input" 
+          class="form-control" 
+          placeholder="Enter the valid URL" 
+          [(ngModel)]="url"
+          (focus)="onInputFocus($event)"
+          (blur)="onInputBlur($event)"
+          required>
+      </div>
+      <button type="button" class="btn btn-primary">Shorten URL</button>
+    </form>
+  </div>
+  
