@@ -6,7 +6,7 @@ import { UrlShortenerComponent } from './url-shortener/url-shortener.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [LoginComponent,UrlShortenerComponent],
+  imports: [LoginComponent,UrlShortenerComponent,RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

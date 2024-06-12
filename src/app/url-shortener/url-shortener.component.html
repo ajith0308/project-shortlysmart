@@ -13,7 +13,24 @@
           (blur)="onInputBlur($event)"
           required>
       </div>
-      <button type="button" class="btn btn-primary">Shorten URL</button>
-    </form>
+      
+      <div class="form-group">
+        <button type="button" class="btn btn-primary shorten-btn" (click)="onShortenUrl()">Shorten URL</button>
+      </div>
+    
+    
+    <div class="form-group-shortenedurl">
+      <div class="input-container">
+          <input 
+              type="text" 
+              id="shortened-url" 
+              class="form-control" 
+              [value]="shortenedUrl" 
+              readonly>
+          <button type="button" class="btn btn-secondary" (click)="copyToClipboard()">Copy</button>
+      </div>
   </div>
+</form>
+</div>
+
   
