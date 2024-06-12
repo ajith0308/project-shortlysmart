@@ -25,7 +25,7 @@ export class LoginComponent {
     // const password = (document.getElementById('password') as HTMLInputElement).value;
     const client = new Client().setEndpoint('https://cloud.appwrite.io/v1').setProject('666882990016fb1b074a'); 
     let logindata=new Account(client);
-    const token =  logindata.createMagicURLToken(ID.unique(),email)
+    const token =  logindata.createMagicURLToken(ID.unique(),email,"https://project-unknown-git-babisha-ajiths-projects-5a4e808c.vercel.app/url-shortener")
     console.log("token",token)
     // Check if both email and password are not empty
     if (email.trim() !== ''  ){
