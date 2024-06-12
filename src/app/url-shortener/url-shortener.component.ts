@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgModel, NgModelGroup } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -17,8 +17,28 @@ export class UrlShortenerComponent {
   shortenedUrl: string = '';
   qrImageUrl: any;
 loading: any;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private routes: ActivatedRoute,private router: Router) {}
 
+  ngOnInit(): void {
+    this.routes.queryParams.subscribe(params => {
+      const userId = params['userId'];
+      const secret = params['secret'];
+      const expire = params['expire'];
+      const project = params['project'];
+
+      // Now you can use these parameters as needed
+      if (userId && secret && expire && project) {
+        // Store data in local storage
+        localStorage.setItem('userId', userId);
+        localStorage.setItem('secret', secret);
+        localStorage.setItem('expire', expire);
+        localStorage.setItem('project', project);
+      } else {
+        // If any parameter is missing, navigate back to the login route
+        this.router.navigate(['/login']);
+      }
+    });
+  }
   onInputFocus(event: Event) {
     const inputElement = event.target as HTMLInputElement;
     inputElement.placeholder = '';
@@ -38,9 +58,11 @@ loading: any;
           (response:any) => {
             this.shortenedUrl = response.short_url;
             this.qrImageUrl = response.qrurl.image;
+            this.loading = false;
           },
           error => {
             console.error('Error shortening the URL:', error);
+            this.loading = false;
             alert('An error occurred while shortening the URL. Please try again.');
           }
         );
