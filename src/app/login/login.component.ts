@@ -11,11 +11,27 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
+  email: string = '';
+  password: string = '';
 
-  onLogin() {
-    // Logic to validate login credentials can be added here
-    this.router.navigate(['/url-shortener']);
+  constructor(private router: Router) {
+    
+  }
+
+  onLogin(event: Event) {
+    event.preventDefault(); // Prevent form submission
+   
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+    const password = (document.getElementById('password') as HTMLInputElement).value;
+ 
+    // Check if both email and password are not empty
+    if (email.trim() !== '' && password.trim() !== '') {
+      // Logic to validate login credentials can be added here
+      this.router.navigate(['/url-shortener']);
+    } else {
+      // If either email or password is empty, prevent routing
+      alert('Please enter both email and password.');
+    }
   }
 }
 

@@ -13,8 +13,22 @@
           (blur)="onInputBlur($event)"
           required>
       </div>
-      <button type="button" class="btn btn-primary shorten-btn">Shorten URL</button>
-    </form>
+      
+   <div class="form-group">
+        <button type="button" class="btn btn-primary shorten-btn">Shorten URL</button>
+      </div>
+    </form> 
+    <!-- <div *ngIf="shortenedUrl" class="shortened-url-container">
+      <div class="form-group">
+        <input 
+          type="text" 
+          id="shortened-url" 
+          class="form-control" 
+          [value]="shortenedUrl" 
+          readonly>
+        <button type="button" class="btn btn-secondary" (click)="copyToClipboard()">Copy</button>
+      </div>
+    </div> --> 
 </div>
 
   
