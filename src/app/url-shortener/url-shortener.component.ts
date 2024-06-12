@@ -15,6 +15,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 export class UrlShortenerComponent {
   url: string = '';
   shortenedUrl: string = '';
+  qrImageUrl: any;
   constructor(private http: HttpClient) {}
 
   onInputFocus(event: Event) {
@@ -35,6 +36,7 @@ export class UrlShortenerComponent {
         .subscribe(
           (response:any) => {
             this.shortenedUrl = response.short_url;
+            this.qrImageUrl = response.qrurl.image;
           },
           error => {
             console.error('Error shortening the URL:', error);

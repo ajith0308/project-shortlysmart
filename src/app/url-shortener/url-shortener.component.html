@@ -29,6 +29,9 @@
               readonly>
           <button type="button" class="btn btn-secondary" (click)="copyToClipboard()">Copy</button>
       </div>
+      <div class="form-group" >
+        <img *ngIf="qrImageUrl" [src]="qrImageUrl" alt="QR Code" width="250px">
+    </div>
   </div>
 </form>
 </div>
