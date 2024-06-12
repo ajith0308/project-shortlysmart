@@ -17,26 +17,28 @@
 }
 
 .form-control {
-    width: 100%;
+    width: 100%; /* This applies to all form controls */
     padding: 10px;
     box-sizing: border-box;
 }
 
-.shorten-btn {
-    width: 150px; /* Set the width to your desired value */
-    padding: 8px 20px; /* Adjust padding as needed */
-    border-radius: 5px; /* Set border radius */
-    margin: 0 auto; /* Center the button horizontally */
+.shortened-url-input {
+    width: 75%; 
+    height: 50%;/* Take up 75% width */
 }
 
 .btn {
+    width: 25%; /* Take up 25% width */
     padding: 10px;
     background-color: #007bff;
     border: none;
     color: white;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .btn:hover {
     background-color: #0056b3;
 }
+
+
