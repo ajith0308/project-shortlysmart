@@ -56,7 +56,7 @@ loading: any;
   onShortenUrl() {
     if (this.url.trim() !== '') {
       // Make an HTTP request to the URL shortening API
-      this.http.post<{ shortenedUrl: string }>('https://project-unknown-api-88wq.onrender.com/shorten', { url: this.url })
+      this.http.post<{ shortenedUrl: string }>('https://project-shortlysmart-api.onrender.com/shorten', { url: this.url })
         .subscribe(
           (response:any) => {
             this.shortenedUrl = response.short_url;
